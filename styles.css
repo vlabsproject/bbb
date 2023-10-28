@@ -1,0 +1,411 @@
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+
+/*===== VARIABLES CSS =====*/
+:root{
+  --header-height: 3rem;
+  --nav-width: 68px;
+
+  /*===== Colors =====*/
+  --first-color: #161414;
+  --black-color: #000000;
+  --first-color-light: #F7F6FB;
+  --first-color-dark: #00EDDF;
+  --white-color: #F7F6FB;
+  
+  /*===== Font and typography =====*/
+  --body-font: 'Nunito', sans-serif;
+  --normal-font-size: 1rem;
+  
+  /*===== z index =====*/
+  --z-fixed: 100;
+}
+
+/*===== BASE =====*/
+*,::before,::after{
+  box-sizing: border-box;
+}
+
+body{
+  position: relative;
+  background-color: #0b0a20; 
+  margin: var(--header-height) 0 0 0;
+  padding: 0 1rem;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  transition: .5s;
+}
+
+a{
+  text-decoration: none;
+}
+/*===== scene =====*/
+.content {
+  flex: 1;
+  padding: 10px;
+}
+
+
+
+
+
+/*===== HEADER =====*/
+.header{
+  width: 100%;
+  height: var(--header-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  background-color: #0b0a20;
+  z-index: var(--z-fixed);
+  transition: .5s;
+}
+
+.header__toggle{
+  color: var( --white-color);
+  left: 30%;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+
+/*===== NAV =====*/
+.l-navbar{
+  position: fixed;
+  top: 0;
+  left: -30%;
+  width: var(--nav-width);
+  height: 100vh;
+  background-color: var(--first-color);
+  padding: .5rem 1rem 0 0;
+  transition: .5s;
+  z-index: var(--z-fixed);
+}
+
+.nav{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.nav__logo, .nav__link{
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  column-gap: 1rem;
+  padding: .5rem 0 .5rem 1.5rem;
+}
+
+.nav__logo{
+  margin-bottom: 2rem;
+}
+
+.nav__logo-icon{
+  font-size: 1.25rem;
+  color: var(--white-color);
+}
+
+.nav__logo-name{
+  color: var(--white-color);
+  font-weight: 700;
+}
+
+.nav__link{
+  position: relative;
+  color: var(--first-color-light);
+  margin-bottom: 1.5rem;
+  transition: .3s;
+}
+
+.nav__link:hover{
+  color: var( --first-color-dark);
+}
+
+.nav__icon{
+  font-size: 1.25rem;
+}
+
+/*Show navbar movil*/
+.show{
+  left: 0;
+}
+
+/*Add padding body movil*/
+.body-pd{
+  padding-left: calc(var(--nav-width) + 1rem);
+}
+
+/*Active links*/
+.active{
+  color: var(--first-color-dark);
+}
+
+.active::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 2px;
+  height: 32px;
+  background-color: var(--white-color);
+}
+
+
+
+
+
+
+
+
+body {
+	font-family: 'Kite One', sans-serif;
+	font-size:14px;
+    background-color: hsl(var(--neutral100));
+    color: hsl(var(--neutral700));
+}
+
+:root {
+    --primary100: 183, 100%, 25%;
+    --primary200: 183, 100%, 50%;
+    --primary300: 183, 100%, 75%;
+    --neutral100: 240, 100%, 7%;
+    --neutral200: 240, 32%, 17%;
+    --neutral300: 240, 32%, 26%;
+    --neutral400: 240, 32%, 35%;
+    --neutral500: 240, 32%, 40%;
+    --neutral600: 240, 32%, 60%;
+    --neutral700: 240, 32%, 80%;
+    --neutral800: 240, 32%, 96%;
+}
+
+.screen{
+	position:absolute;
+	margin-top: 20vh;
+	width: 100%;
+	height: auto;
+}
+#graph {
+
+	width: 610px;
+	height: 640px;
+	margin-right:10px;
+	float:left;
+	text-align:center;
+}
+
+#canvas {
+	box-sizing: padding-box;
+	margin-left: -5vw;
+margin-top: -10vh;
+	width: 500px;
+	height: 500px;
+	border-radius: 20px;
+
+
+}
+
+.numElements{
+	color: #00F0FF;
+}
+.topBox p{
+
+color: #00F0FF;
+}
+#control {
+	margin-top: -105vh;
+	margin-left: 38vw;
+	width: 800px;
+	height:470px;
+	padding:10px 10px;
+	float:left;
+	display:block;
+	border-radius: 20px;
+	border:1px solid #ccc;
+	text-align: center;
+    background: linear-gradient(130deg, hsla(var(--primary200), .2), hsla(var(--neutral100), 0));
+	
+    /** Backdrop filter adds that nice Glassmorphism effect if there are background elements **/
+    -webkit-backdrop-filter: blur( .5px );
+    backdrop-filter: blur( .5px );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+	border-color: #00F0FF;
+}
+
+@keyframes glow {
+    0%, 100% {
+        stroke-width: 3px;
+    }
+    50% {
+        stroke-width: 6px;
+    }
+}
+
+.svg {
+    overflow: visible;
+
+    &__stroke {
+        fill: none;
+        stroke-miterlimit: 10;
+
+        &--glow {
+            stroke-width: 3px;
+            animation-name: glow;
+            stroke: hsla(var(--primary200), .5);
+        }
+        
+        &--bottom {
+            stroke-width: 1.5px;
+            stroke: hsl(var(--primary200));
+        }
+
+        &--top {
+            stroke-width: 1px;
+            stroke: rgba(255, 255, 255, 1);
+        }
+    }
+}
+
+
+
+
+ul {
+	list-style-type: none;
+	display: table;
+	margin:0;
+	padding:0;
+}
+
+ul li {
+	display:table-cell;
+	text-align: center;
+	padding:10px;
+}
+
+
+input, input[type] {
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+h3 {
+	text-align: center;
+	font-size:13px;
+	font-style: italic;
+	margin-top:4px;
+	color: #00F0FF;
+}
+
+.selected {
+	border:3px solid #13e2f1;
+}
+
+.slide {
+	margin-left:13px;
+}
+
+#topBox{
+	
+	position: relative;
+	display:block;
+	margin-bottom:5px;
+	height:250px;
+	text-align: center;
+	color: #a7a2b0;
+}
+
+#botBox {
+	position: relative;
+	display:block;
+	margin-bottom:5px;
+	height:250px;
+	text-align: center;
+	color: #a7a2b0;
+	width:260px;
+	margin:2vw auto;
+	
+}
+
+#sliderSpacing, #sliderPhase {
+	display:inline-block;
+	width:200px;
+	margin:3px auto;
+}
+
+.horiz-slidebox, .vert-slidebox {
+	width:33px;
+	text-align: center;
+}
+
+.horiz-slidebox {
+	float:left;
+	
+	margin-right:14px;
+}
+
+.ui-slider-legend {
+	display:table;
+	width:200px;
+	margin:0 0 0 60px;
+}
+
+.ui-slider-legend p {
+	display:table-cell;
+	margin:0;
+	padding:0;
+	text-align:left;
+}
+
+#numElements {
+	width:40px;
+	font-family: 'Kite One', sans-serif;
+	font-size:12px;
+}
+
+.icon {
+	width:30px;
+}
+
+.graph-controls{
+	justify-content: center;
+	align-items: center;
+	gap: 2vw;
+position: absolute;
+top: 67vh;
+left: 10vw;
+}
+
+.submit{
+	background-color: #390993;
+}
+
+input[type=submit] {
+	background: linear-gradient(130deg, hsla(var(--primary200), .2), hsla(var(--neutral100), 0));
+	
+    /** Backdrop filter adds that nice Glassmorphism effect if there are background elements **/
+    -webkit-backdrop-filter: blur( .5px );
+    backdrop-filter: blur( .5px );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+	border-color: #00F0FF;
+	text-decoration-color: #ccc;
+  }
+
+
+  input[value=rectangular] {
+	background: linear-gradient(130deg, hsla(var(--primary200), .2), hsla(var(--neutral100), 0));
+	
+    /** Backdrop filter adds that nice Glassmorphism effect if there are background elements **/
+    -webkit-backdrop-filter: blur( .5px );
+    backdrop-filter: blur( .5px );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+	border-color: #00F0FF;
+	text-decoration-color: #881b1b;
+	
+	
+
+
+  }
+
